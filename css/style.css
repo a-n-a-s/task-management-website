@@ -5,7 +5,23 @@
     
 }
 body{
-    width: 100vh;
+    
     font-family: 'Poppins', sans-serif;
+    background-color: #ebf2ff;
+}
+a:hover {
+    color: #1559cf;
+    text-decoration: underline;
+}
+.task__card:hover {
+    border: 1px solid #4582ec;
+}
+.task__card:hover
+.task__card__header{
+    border-bottom: 1px solid #4582ec;
+}
+.task__card:hover
+h4{
+    color: #4582ec;
 }
 
