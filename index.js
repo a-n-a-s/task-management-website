@@ -4,7 +4,7 @@ const taskContainer = document.querySelector(".task__container");
 // new card template
 const generateNewCard = (taskData) => `
 <div class="col-md-6 col-lg-4 mt-3" >
-<div class="card shadow-sm task__card ">
+<div class="card shadow-sm task__card">
 
   <div class="card-header d-flex justify-content-end task__card__header">
     <button type="button" class="btn btn-outline-info mr-2" onclick ="editCard()" >
@@ -16,7 +16,7 @@ const generateNewCard = (taskData) => `
                 </button>
   </div>
   <div class="card-body">
-            <img height="200rem" src="${taskData.imageUrl}" alt="Card image cap" class="card-img-top mb-3 rounded-lg">
+            <img height="200rem" src="${taskData.imageUrl}" alt="Card image cap" class="card-img-top mb-3 rounded-lg" id="myImg">
   
     <h4 class="task__card__title" id="title">${taskData.taskTitle}</h4>
     <p class="description trim-3-lines text-muted" id="desc" >
@@ -30,6 +30,10 @@ const generateNewCard = (taskData) => `
     
     <button type="button" onclick="saveEdit()" class="btn btn-primary float-right"">
       Save Changes
+    </button>
+    <button type="button"  class="btn btn-primary float-right"data-bs-target="#openModal" onclick="openModal()" data-bs-toggle="modal">
+    <i class="fas fa-external-link-alt" onclick="openModal()"
+    data-bs-target="#openModal" data-bs-toggle="modal"></i>
     </button>
   </div>
 </div>
@@ -81,9 +85,7 @@ const deleteCard = (event) => {
       event.target.parentNode.parentNode.parentNode
     );
   } else {
-    return taskContainer.removeChild(
-      event.target.parentNode.parentNode.parentNode.parentNode
-    );
+    return taskContainer.removeChild(event.target.parentNode.parentNode.parentNode.parentNode);
   }
 };
 
@@ -106,3 +108,18 @@ const saveEdit = () => {
   document.getElementById("desc").contentEditable = "false";
   document.getElementById("type").contentEditable = "false";
 };
+
+const openModal = () => {
+
+  openTitle = document.getElementById("title").textContent;
+  openType = document.getElementById("type").textContent;
+  openDesc = document.getElementById("desc").textContent;
+  openImage = document.images.namedItem("myImg").src;
+
+  document.getElementById("openTitle").innerHTML = openTitle;
+  document.getElementById("openType").innerHTML = openType;
+  document.getElementById("openDesc").innerHTML = openDesc;
+  document.getElementById("openImage").src = openImage;
+  
+
+}

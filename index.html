@@ -25,6 +25,7 @@
     <title>TaskY</title>
   </head>
   <body onload="loadCardData()">
+    <!--  anmiate model --> 
     <div class="modal "id="animateModal" tabindex="-2">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -33,7 +34,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body d-flex justify-content-center">
-            <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_jP0UkE.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"   autoplay></lottie-player>
+            <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_jP0UkE.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;" loop  autoplay></lottie-player>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -123,6 +124,49 @@
               Close
             </button>
             <button data-bs-dismiss="modal" onclick = "saveChanges()" type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- open task model -->
+    <div class="modal " id="openModal" tabindex="-3">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Task View</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="col-md-6 col-lg-4 mt-3" >
+            <div class="card shadow-sm task__card " >
+
+              <div class="card-header d-flex justify-content-end task__card__header">
+        
+              </div>
+              <div class="card-body"  >
+                        <img  src="" alt="Card image cap" id="openImage" class="card-img-top " width="height=200rem">
+              
+                <h1 class="task__card__title" id="openTitle"></h1>
+                <p class="description trim-3-lines font-large " id="openDesc" >
+                 
+                </p>
+                <div class="tags text-white d-flex flex-wrap">
+                  <h3>
+                    <span class="badge h1 bg-primary m-1" id="openType"></span>
+                  </h3>
+                  
+                </div>
+              </div>
+              <div class="card-footer">
+                
+              </div>
+            </div>
+            </div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
